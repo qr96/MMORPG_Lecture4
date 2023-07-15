@@ -24,7 +24,7 @@ namespace DummyClient
 
                     for (int i = 0; i < 5; i++)
                     {
-                        byte[] sendBuff = Encoding.UTF8.GetBytes($"Hello Wolrd {i}");
+                        byte[] sendBuff = Encoding.UTF8.GetBytes($"Hello Wolrd! {i}");
                         int sendBytes = socket.Send(sendBuff);
 
                     }
