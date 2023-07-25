@@ -13,3 +13,6 @@ C:\Users\Lee\source\repos\MMORPG_Lecture4\DummyClient\obj\Debug\net6.0\refint\Du
 C:\Users\Lee\source\repos\MMORPG_Lecture4\DummyClient\obj\Debug\net6.0\DummyClient.pdb
 C:\Users\Lee\source\repos\MMORPG_Lecture4\DummyClient\obj\Debug\net6.0\DummyClient.genruntimeconfig.cache
 C:\Users\Lee\source\repos\MMORPG_Lecture4\DummyClient\obj\Debug\net6.0\ref\DummyClient.dll
+C:\Users\Lee\source\repos\MMORPG_Lecture4\DummyClient\bin\Debug\net6.0\ServerCore.dll
+C:\Users\Lee\source\repos\MMORPG_Lecture4\DummyClient\bin\Debug\net6.0\ServerCore.pdb
+C:\Users\Lee\source\repos\MMORPG_Lecture4\DummyClient\obj\Debug\net6.0\DummyClient.csproj.CopyComplete
