@@ -8,6 +8,72 @@ namespace PacketGenerator
 {
     class PacketFormat
     {
+        // {0} 패킷 등록
+        public static string managerFormat =
+@"using ServerCore;
+using System;
+using System.Collections.Generic;
+
+public class PacketManager
+{{
+	#region Singleton
+	static PacketManager _instance = new PacketManager();
+	public static PacketManager Instance {{ get {{ return _instance; }} }}
+	#endregion
+
+	PacketManager()
+	{{
+		Register();
+	}}
+
+	Dictionary<ushort, Func<PacketSession, ArraySegment<byte>, IPacket>> _makeFunc = new Dictionary<ushort, Func<PacketSession, ArraySegment<byte>, IPacket>>();
+	Dictionary<ushort, Action<PacketSession, IPacket>> _handler = new Dictionary<ushort, Action<PacketSession, IPacket>>();
+		
+	public void Register()
+	{{
+{0}
+	}}
+
+	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer, Action<PacketSession, IPacket> onRecvCallback = null)
+	{{
+		ushort count = 0;
+
+		ushort size = BitConverter.ToUInt16(buffer.Array, buffer.Offset);
+		count += 2;
+		ushort id = BitConverter.ToUInt16(buffer.Array, buffer.Offset + count);
+		count += 2;
+
+		Func<PacketSession, ArraySegment<byte>, IPacket> func = null;
+		if (_makeFunc.TryGetValue(id, out func))
+		{{
+			IPacket packet = func.Invoke(session, buffer);
+			if (onRecvCallback != null)
+				onRecvCallback.Invoke(session, packet);
+			else
+				HandlePacket(session, packet);
+		}}
+	}}
+
+	T MakePacket<T>(PacketSession session, ArraySegment<byte> buffer) where T : IPacket, new()
+	{{
+		T pkt = new T();
+		pkt.Read(buffer);
+		return pkt;
+	}}
+
+	public void HandlePacket(PacketSession session, IPacket packet)
+	{{
+		Action<PacketSession, IPacket> action = null;
+		if (_handler.TryGetValue(packet.Protocol, out action))
+			action.Invoke(session, packet);
+	}}
+}}";
+
+        // {0} 패킷 이름
+        public static string managerRegisterFormat =
+@"		_makeFunc.Add((ushort)PacketID.{0}, MakePacket<{0}>);
+		_handler.Add((ushort)PacketID.{0}, PacketHandler.{0}Handler);";
+
         // {0} 패킷 이름/번호 목록
         // {1} 패킷 목록
         public static string fileFormat =
@@ -43,9 +109,11 @@ public interface IPacket
         // {3} 멤버 변수 Write
         public static string packetFormat =
 @"
-class {0}
+class {0} : IPacket
 {{
     {1}
+
+    public ushort Protocol {{ get {{ return (ushort)PacketID.{0}; }} }}
 
     public void Read(ArraySegment<byte> segment)
     {{
