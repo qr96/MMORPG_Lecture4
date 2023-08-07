@@ -41,9 +41,9 @@ namespace ServerCore
     public abstract class Session
     {
         Socket _socket;
-        int _disconnceted = 0;
+        int _disconnected = 0;
 
-        RecvBuffer _recvBuffer = new RecvBuffer(1024);
+        RecvBuffer _recvBuffer = new RecvBuffer(65535);
 
         object _lock = new object();
         Queue<ArraySegment<byte>> _sendQueue = new Queue<ArraySegment<byte>>();
@@ -75,6 +75,21 @@ namespace ServerCore
             RegisterRecv();
         }
 
+        public void Send(List<ArraySegment<byte>> sendBuffList)
+        {
+            if (sendBuffList.Count == 0) 
+                return;
+
+            lock (_lock)
+            {
+                foreach (var sendBuff in sendBuffList)
+                    _sendQueue.Enqueue(sendBuff);
+
+                if (_pendingList.Count == 0)
+                    RegisterSend();
+            }
+        }
+
         public void Send(ArraySegment<byte> sendBuff)
         {
             lock (_lock)
@@ -88,7 +103,7 @@ namespace ServerCore
         public void Disconnect()
         {
             // 멀티스레드 환경에서 안전하도록
-            if (Interlocked.Exchange(ref _disconnceted, 1) == 1)
+            if (Interlocked.Exchange(ref _disconnected, 1) == 1)
                 return;
 
             OnDisconnected(_socket.RemoteEndPoint);
@@ -99,7 +114,7 @@ namespace ServerCore
 
         void RegisterSend()
         {
-            if (_disconnceted == 1)
+            if (_disconnected == 1)
                 return;
 
             while (_sendQueue.Count > 0)
@@ -115,9 +130,9 @@ namespace ServerCore
                 if (pending == false)
                     OnSendCompleted(null, _sendArgs);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine($"RegisterSend Failed {ex}");
+                Console.WriteLine($"RegisterSend Failed {e}");
             }
         }
 
@@ -137,9 +152,9 @@ namespace ServerCore
                         if (_sendQueue.Count > 0)
                             RegisterSend();
                     }
-                    catch (Exception ex)
+                    catch (Exception e)
                     {
-                        Console.WriteLine($"OnSendCompleted Failed {ex}");
+                        Console.WriteLine($"OnSendCompleted Failed {e}");
                     }
                 }
                 else
@@ -151,7 +166,7 @@ namespace ServerCore
 
         void RegisterRecv()
         {
-            if (_disconnceted == 1)
+            if (_disconnected == 1)
                 return;
 
             _recvBuffer.Clean();
@@ -168,7 +183,7 @@ namespace ServerCore
             {
                 Console.WriteLine($"RegisterRecv Failed {e}");
             }
-            
+
         }
 
         void OnRecvCompleted(object sender, SocketAsyncEventArgs args)
