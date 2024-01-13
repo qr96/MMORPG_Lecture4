@@ -1,0 +1,14 @@
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\bin\Debug\net6.0\Server.exe
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\bin\Debug\net6.0\Server.deps.json
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\bin\Debug\net6.0\Server.runtimeconfig.json
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\bin\Debug\net6.0\Server.dll
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\bin\Debug\net6.0\Server.pdb
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\Server.AssemblyInfoInputs.cache
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\Server.AssemblyInfo.cs
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\Server.csproj.CoreCompileInputs.cache
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\Server.dll
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\refint\Server.dll
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\Server.pdb
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\Server.genruntimeconfig.cache
+C:\Users\Lee\source\repos\MMORPG_Lecture4_2\Server\Server\obj\Debug\net6.0\ref\Server.dll
