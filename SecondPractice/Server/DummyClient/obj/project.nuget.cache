@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FoN9lHRDAVF4jGFinTUwZNhW2/KfLhwrEcuvNo7U6/Vt5q+QpUchXzpvdFfufK8vPgNIkUlTIF3aT+ZV2UTSyw==",
+  "dgSpecHash": "RXsZ00NyaDiLgxQ7aCZnWxBVhsXUknulwWNBTIlFRiVlznxygobB/nFO2JBtr8ht24d/ry9tdvRnEhpFzkL59Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\DummyClient\\DummyClient.csproj",
+  "projectFilePath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\DummyClient\\DummyClient.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

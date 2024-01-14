@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "ServerCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ServerCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ServerCore.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ServerCore/1.0.0": {
+      "type": "project",
+      "path": "../ServerCore/ServerCore.csproj",
+      "msbuildProject": "../ServerCore/ServerCore.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "ServerCore >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Lee\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\DummyClient\\DummyClient.csproj",
+      "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\DummyClient\\DummyClient.csproj",
       "projectName": "DummyClient",
-      "projectPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\DummyClient\\DummyClient.csproj",
+      "projectPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\DummyClient\\DummyClient.csproj",
       "packagesPath": "C:\\Users\\Lee\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\DummyClient\\obj\\",
+      "outputPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\DummyClient\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lee\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\ServerCore.csproj": {
+              "projectPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\ServerCore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

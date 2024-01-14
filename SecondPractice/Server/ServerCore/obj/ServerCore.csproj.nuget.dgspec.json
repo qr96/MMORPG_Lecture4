@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\ServerCore\\ServerCore.csproj": {}
+    "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\ServerCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\ServerCore\\ServerCore.csproj": {
+    "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\ServerCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\ServerCore\\ServerCore.csproj",
+        "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\ServerCore.csproj",
         "projectName": "ServerCore",
-        "projectPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\ServerCore\\ServerCore.csproj",
+        "projectPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\ServerCore.csproj",
         "packagesPath": "C:\\Users\\Lee\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\ServerCore\\obj\\",
+        "outputPath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lee\\AppData\\Roaming\\NuGet\\NuGet.Config",

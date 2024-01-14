@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/BI6xMi1qyu3p6dDpVPymK2H6LqTggbkhNjROtwJF/i/N/1tQGOedp9r7GLUVas1/AUYPO4UYqzUeDgEFI1xpA==",
+  "dgSpecHash": "gSRhlcbe9r/PUYunaC60ysqDK59Sa/2wOTKVnxxWhKuP7DtsK5j70LwhtDUV4xPI5DcDDjGx2S20rUFmyn8W0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4_2\\Server\\ServerCore\\ServerCore.csproj",
+  "projectFilePath": "C:\\Users\\Lee\\source\\repos\\MMORPG_Lecture4\\SecondPractice\\Server\\ServerCore\\ServerCore.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
